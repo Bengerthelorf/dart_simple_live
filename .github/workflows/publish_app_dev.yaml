@@ -66,6 +66,11 @@ jobs:
       - name: Install flutter_distributor
         run: dart pub global activate flutter_distributor
 
+      - name: Install Android API 36
+        run: |
+          yes | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager --channel=3 "platforms;android-36" "build-tools;36.0.0"
+
+
       # 打包APK
       - name: Build APK
         run: |
